@@ -1,0 +1,41 @@
+﻿@model PrimerObligatorio.Partido
+
+<div class="text-center">
+    <br /><h2>Reseña de partido</h2><br />
+    
+    <div class="viewbag">
+        <b><p style="color:green"> @ViewBag.correcto</p></b>
+        <b><p style="color:red"> @ViewBag.error</p></b>
+        <br />
+    </div>
+   
+        <form method="post">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>Numero de partido</td>
+                        <td>Selección</td>
+                        <td>Versus</td>
+                        <td>Selección</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td name = "id">@Model.IdPartido</td>
+                        @foreach (var seleccion in Model.GetSeleccionesPartido())
+                        {
+                            <td>@seleccion.Pais.NombrePais</td>
+                            <td></td>
+                        }
+                    </tr>
+            </tbody>
+        </table>
+
+
+        <input type="text" name="titulo" style="border-color:black" size="80" placeholder="Titulo" /><br /><br />
+        <textarea name="contenido" placeholder="Ingrese su reseña" style="width:600px; height:300px"></textarea><br /><br />
+        <input type="submit" value="Realizar reseña" class="btn btn-outline-dark" />
+    </form>
+
+</div>

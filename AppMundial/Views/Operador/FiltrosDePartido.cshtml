@@ -1,0 +1,76 @@
+﻿@model IEnumerable<PrimerObligatorio.Partido>
+
+<div class="text-center">
+    <br /><h3 style="color:darkslategrey"><u>Para filtrar partidos cerrados seleccione fecha inicial y final</u></h3><br />
+
+    <div class="container navbar-nav flex-grow-1 align-items-center justify-content-around text-center">
+        <form method="post">
+
+            <nav class="navbar navbar-expand-xl navbar-toggleable-xl navbar-light bg-white mb-3">
+                <div class="container">
+                    <span style="padding:40px">
+                        <label> Ingrese fecha inicial</label><br /><br />
+                        <input type="date" min="2022-11-20" max="2022-12-18" name="d1" />
+                    </span>
+                    <span style="padding:40px">
+                        <label> Ingrese fecha final</label><br /><br />
+                        <input type="date" min="2022-11-20" max="2022-12-18" name="d2" />
+                    </span>
+                    <span>
+                        <input type="submit" value="Buscar" class="btn btn-outline-dark" />
+                    </span>
+                </div>
+            </nav>
+
+        </form>
+
+    </div>
+
+    <div class="viewbag">
+        <b><p style="color:red"> @ViewBag.Error</p></b>
+    </div>
+
+    @if (Model != null)
+    { @if (Model.Count() != 0)
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td><b>Fecha </b></td>
+                        <td> <b> Selección </b></td>
+                        <td> <b> <img src="~/css/Gol.png" width="40" /> </b></td>
+                        <td> <img src="~/css/TarjetaAmarilla.png" width="40" /> </td>
+                        <td>  <img src="~/css/TarjetaRoja.png" width="40" /></td>
+                        <td> <b> Selección </b></td>
+                        <td> <b> <img src="~/css/Gol.png" width="40" /> </b></td>
+                        <td> <img src="~/css/TarjetaAmarilla.png" width="40" /> </td>
+                        <td>  <img src="~/css/TarjetaRoja.png" width="40" /></td>
+                        <td><b></b></td>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var partido in Model)
+                    {
+
+                        <tr>
+                            <td class="col-1 col-sm-1">@partido.FechaPartido.ToString("dd/MM/yyyy hh:mm tt")</td>
+
+                            <td>@partido.GetSeleccionesPartido()[0].Pais.NombrePais</td>
+                            <td class="col-1 col-sm-1">@partido.GetIncidenciasTipo("Gol", 0)</td>
+                            <td class="col-1 col-sm-1">@partido.GetIncidenciasTipo("TarjetaAmarilla", 0)</td>
+                            <td class="col-1 col-sm-1">@partido.GetIncidenciasTipo("TarjetaRoja", 0)</td>
+                            <td> @partido.GetSeleccionesPartido()[1].Pais.NombrePais</td>
+                            <td class="col-1 col-sm-1">@partido.GetIncidenciasTipo("Gol", 1)</td>
+                            <td class="col-1 col-sm-1">@partido.GetIncidenciasTipo("TarjetaAmarilla", 1)</td>
+                            <td class="col-1 col-sm-1">@partido.GetIncidenciasTipo("TarjetaRoja", 1)</td>
+                            <td>@partido.ResultadoFinal</td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+            <p style="text-align:left"><small><i>Entre parentesis se indica la cantidad de goles en penales</i></small></p>
+        }
+    }
+</div>

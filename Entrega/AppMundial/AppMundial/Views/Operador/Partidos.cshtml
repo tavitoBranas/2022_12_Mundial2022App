@@ -1,0 +1,71 @@
+﻿@model IEnumerable<PrimerObligatorio.Partido>
+
+<div class="text-center">
+
+    <br /><h3 style="color:darkslategrey"><u>Partidos no finalizados</u></h3><br /><br />
+
+    @if (@ViewBag.NoFinalizados.Count !=0)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <td><b>Fecha de partido</b></td>
+                    <td> <b>Selección </b></td>
+                    <td> <b>Selección </b></td>
+                    <td> </td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var partido in @ViewBag.NoFinalizados)
+                {
+                    <tr>
+                        <td>@partido.FechaPartido.ToString("dd/MM/yyyy hh:mm tt")</td>
+                        @foreach (var Seleccion in partido.GetSeleccionesPartido())
+                        {
+                            <td>@Seleccion.Pais.NombrePais</td>
+                        }
+                        <!--link para finalizacion-->
+                        <td>@Html.ActionLink("Finalizar Partido","FinalizacionPartido",new{id=partido.IdPartido})</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else {
+        <p><b>No existen partidos sin finalizar</b></p>
+    }
+
+    <br /><h3 style="color:darkslategrey"><u>Partidos finalizados</u></h3><br /><br />
+
+    @if (Model.Count() != 0)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <td><b>Fecha de partido</b></td>
+                    <td> <b>Selección </b></td>
+                    <td> <b>Selección </b></td>
+                    <td> <b>Ganador </b></td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var partido in Model)
+                {
+                    <tr>
+                        <td>@partido.FechaPartido.ToString("dd/MM/yyyy hh:mm tt")</td>
+                        @foreach (var Seleccion in partido.GetSeleccionesPartido())
+                        {
+                            <td>@Seleccion.Pais.NombrePais</td>
+                        }
+                        <!--con esta etiqueta html.raw leo el texto con <br/> para salto de linea-->
+                        <td>@partido.ResultadoFinal</td>
+                    </tr>
+                }
+            </tbody>
+    </table>
+    } 
+    else 
+    {
+        <p><b>No existen partidos finalizados</b></p>
+    }
+</div>

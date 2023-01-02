@@ -1,0 +1,42 @@
+﻿@model IEnumerable<PrimerObligatorio.Reseña>
+
+<div class="text-center">
+    <br /><h3 style="color:darkslategrey"><u>Reseñas de partidos según @ViewBag.Periodista</u></h3><br />
+
+
+    @if (Model.Count() != 0)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Fecha de reseña</td>
+                    <td>Fecha del Partido</td>
+                    <td>Grupo</td>
+                    <td>Seleccion</td>
+                    <td>Selección</td>
+                    <td>Reseña</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var Reseña in Model)
+                {
+                    <tr>
+                        <td>@Reseña.FechaReseña.ToString("dd/MM/yyyy")</td>
+                        <td>@Reseña.Partido.FechaPartido.ToString("dd/MM/yyyy hh:mm tt")</td>
+                        <td>@Reseña.GrupoPartido()</td>
+
+                        @foreach (var seleccion in Reseña.Partido.GetSeleccionesPartido())
+                        {
+                            <td>@seleccion.Pais.NombrePais</td>
+                        }
+                        <td class="text-justify">@Reseña.ContenidoReseña</td>
+                    </tr>
+                }
+
+        </tbody>
+    </table>
+    }
+    else{
+        <p><b>No existen reseñas para este periodista</b></p>
+    }
+</div>

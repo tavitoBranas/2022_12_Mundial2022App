@@ -1,0 +1,47 @@
+﻿@model IEnumerable<PrimerObligatorio.Seleccion>
+
+<div class="text-center  ">
+    <br /><h2>Listado de selecciones con sus respectivos jugadores</h2><br />
+
+    <table class="table justify-content-around align-items-center">
+        <thead>
+            <tr>
+                <td class="col-1 col-sm-1"></td>
+                <td class="col-1 col-sm-1"></td>
+                <td class="col-1 col-sm-1"></td>
+                <td class="col-1 col-sm-1"></td>
+                <td class="col-1 col-sm-1"></td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var Seleccion in Model)
+            {
+                <tr>
+                    <td class="col-1 col-sm-1" style="background-color:lightgreen"></td>
+                    <td class="col-1 col-sm-1" style="background-color:lightgreen"></td>
+                    <td class="col-1 col-sm-1" style="background-color:lightgreen"> @Seleccion.Pais.NombrePais</td>
+                    <td class="col-1 col-sm-1" style="background-color:lightgreen"></td>
+                    <td class="col-1 col-sm-1" style="background-color:lightgreen"></td>
+                </tr>
+
+                int contador = 0;
+                @foreach (var jugador in Seleccion.GetJugadoresSeleccion())
+                {
+                    @if ( contador ==5)
+                    {
+                        <tr></tr>
+                        ;
+                        contador=0;
+                    }
+
+                    @if (contador <= 5 )
+                    {
+                    <td>@jugador.NombreCompJugador</td>
+                    contador++; 
+                    }
+                }
+            }
+        </tbody>
+    </table>
+
+</div>

@@ -1,0 +1,36 @@
+﻿@model PrimerObligatorio.Periodista
+
+<div class="text-center">
+    <br /><h2>Registro de periodistas</h2><br/>
+
+    <div class="viewbag">
+        <b><p style="color:green" id="correcto"> @ViewBag.correcto</p></b>
+        <b><p style="color:red" id="error"> @ViewBag.error</p></b>
+        <br/>
+    </div>
+
+    <div class="registroPeriodista">
+
+        <form method="post" id="registroPeriodistas">
+
+            <label for="NombrePeriodista"> Ingresa tu nombre</label> <br />
+            <input type="text" size="30" asp-for="Nombre" dirname="NombrePeriodista" /> <br /><br />
+
+            <label for="ApellidoPeriodista"> Ingresa tu apellido</label> <br />
+            <input type="text" size="30" asp-for="Apellido" dirname="ApellidoPeriodista" /> <br /><br />
+
+            <label for="Email"> Ingresa tu mail</label> <br />
+            <input type="text" size="30" asp-for="Email" dirname="Email" /> <br /><br />
+
+            <label for="Password"> Ingresa tu contraseña</label> <br />
+            <input type="password" size="30" asp-for="Password" dirname="Password" title="La contraseña debe de contener al menos 8 ca racteres" /> <br /><br /><br />
+
+            @Html.CheckBox("Acepta") Acepta <a href="~/Terminos.pdf" target="_blank">  Terminos y Condiciones</a><br />
+
+            <br/><input type="submit" value="Registrar" class="btn btn-outline-dark" /> <br /> <br />
+        </form>
+
+    </div>
+    
+</div>
+<script src="~/js/home/RegistroPeriodistas.js"></script>

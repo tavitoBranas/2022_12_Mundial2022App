@@ -1,0 +1,31 @@
+﻿@model IEnumerable< PrimerObligatorio.Periodista>
+
+<div class="text-center">
+    <br /><h3 style="color:darkslategrey"><u>Periodistas</u></h3><br /><br />
+
+    <table class="table">
+        <thead>
+            <tr>
+                <td><b>Apellido</b></td>
+                <td> <b>Nombre </b></td>
+                <td> <b>Identificador </b></td>
+                <td> <b>Email </b></td>
+                <td> </td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var periodista in Model)
+            {
+                <tr>
+                    <td>@periodista.Apellido</td>
+                    <td>@periodista.Nombre</td>
+                    <td>@periodista.Id</td>
+                    <td>@periodista.Email</td>
+                    <!--link para la reseña-->
+                    <td>@Html.ActionLink("Visualizar reseñas","Reseñas",new{id=periodista.Id})</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

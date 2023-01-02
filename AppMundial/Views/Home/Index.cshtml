@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<div class="text-center">
+    <br /><h2>Bienvenido</h2><br />
+
+    <div class="viewbag">
+        <b><p style="color:red" id="error"> @ViewBag.error</p></b>
+        <br />
+    </div>
+
+    <div class="ingreso">
+
+        <form method="post" id="login">
+
+            <label for="usuario"> Ingresa tu usuario</label> <br />
+            <input type="text" size="30" dirname="usuario" id="usuario" name="usuario" /> <br /><br />
+
+            <label for="contaseña"> Ingresa tu contraseña</label> <br />
+            <input type="password" size="30" dirname="contraseña" id="contraseña" name="contraseña" /> <br /><br /><br />
+
+            <input type="submit" class="btn btn-outline-dark" value="Ingresar" />
+        </form>
+
+    </div>
+
+</div>
+
+<script src="./js/Home/Index.js"></script>

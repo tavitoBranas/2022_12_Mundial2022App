@@ -1,0 +1,42 @@
+﻿<div class="text-center">
+    <br /><h2>Bienvenido @ViewBag.Nombre</h2><br /><br />
+
+    <div class="container ">
+        <div class="row justify-content-around align-items-center text-center">
+            <div class="col-sm-4">
+                <label> Visualizacion de selecciones </label><br /><br /><br /> 
+                <a class="nav-link text-dark " asp-controller="Home" asp-action="ListadoSelecciones" asp-route-tipo="@ViewBag.Tipo" asp-route-nombre="@ViewBag.Nombre">
+                    <img src="~/css/Selecciones.png" class="rounded float-center" alt="Selecciones" width="250 px" />
+                </a>
+            </div>
+            <div class="col-sm-4">
+                <label> Partidos finalizados <br /> Finalizacion de partidos </label>
+                <a class="nav-link text-dark " asp-area="" asp-controller="Operador" asp-action="Partidos">
+                    <img src="~/css/PartidoFinalizado.jpg" class="rounded float-center" alt="Partidos finalizados" width="250 px" />
+                </a>
+            </div>
+            <div class="col-sm-4 ">
+                <label> Filtro de partidos</label><br />
+                <a class="nav-link text-dark" asp-area="" asp-controller="Operador" asp-action="FiltrosDePartido">
+                    <img src="~/css/Filtro.png" class="rounded float-center" alt="Filtro de partidos" width="150 px">
+                </a>
+                
+            </div>
+            <div class="col-sm-4 ">
+                <br /><br /><br />
+                <a class="nav-link text-dark" asp-area="" asp-controller="Operador" asp-action="Periodistas">
+                    <img src="~/css/PeriodistasActivos.jpg" class="rounded float-center" alt="Periodistas activos" width="300 px">
+                </a><br/>
+                <label> Periodistas activos</label>
+            </div>
+            <div class="col-sm-4 ">
+                <br /><br /><br />
+                <a class="nav-link text-dark" asp-area="" asp-controller="Operador" asp-action="Estadisticas">
+                    <img src="~/css/estadisticas.jpg" class="rounded float-center" alt="Estadisticas" width="200 px">
+                </a><br /><br />
+                <label> Estadisticas</label>
+            </div>
+        </div>
+    </div>
+
+</div>

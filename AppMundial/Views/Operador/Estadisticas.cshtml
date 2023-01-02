@@ -1,0 +1,105 @@
+﻿@model IEnumerable<PrimerObligatorio.Partido>
+
+<div class="text-center">
+    <br /><h3 style="color:darkslategrey"><u>Estadísticas</u></h3><br />
+
+    <div class="container navbar-nav flex-grow-1 align-items-center justify-content-around text-center">
+        <nav class="navbar navbar-expand-xl navbar-toggleable-xl navbar-light bg-white mb-3">
+            <div class="container">
+
+                <span style="padding:40px">
+                    <h4><b> Seleccion con mas goles </b></h4><br />
+
+                    @if (ViewBag.SeleccionConMasGoles.Count != 0)
+                    {
+                        <div class="row">
+                            @foreach (var seleccion in ViewBag.SeleccionConMasGoles)
+                            {
+                                <div class="col-6 mx-auto ">
+                                    <h5>
+                                        <img src="~/css/MasGoles.jpg" width="40" /><br />
+                                        <b> @seleccion.Pais.NombrePais </b>
+                                    </h5>
+                                </div>
+                            }
+                        </div>
+                        <p style="text-align:center"><small><i>Los goles totales no consideran penales. Se consideran solamente partidos finalizados</i></small></p>
+
+                    }
+                    else
+                    {
+                        <p><b>No se han registrado goles aun.</b></p>
+                    }
+                </span>
+            </div>
+        </nav>
+
+    </div>
+
+
+    <div class="container navbar-nav flex-grow-1 align-items-center justify-content-around text-center">
+        <form method="post" id="busqueda">
+            <nav class="navbar navbar-expand-xl navbar-toggleable-xl navbar-light bg-white mb-3">
+                <div class="container">
+                    <span style="padding:40px">
+                        <h4><b> Busqueda de partidos con expulsiones reseñados por un periodista </b></h4><br />
+
+                        <div class="viewbag">
+                            <b><p style="color:red" id="error"> @ViewBag.Error</p></b>
+                        </div><br />
+
+                        <label><b>Ingrese mail de periodista</b></label><br /><br />
+                        <input type="text" size="30" name="email" id="mail" /><br /><br /><br />
+                        <input type="submit" class="btn btn-outline-dark" value="Ingresar" />
+                    </span>
+                </div>
+            </nav>
+        </form>
+    </div>
+
+
+    @if (Model != null)
+    {
+        @if (Model.Count() != 0)
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td><b>Fecha </b></td>
+                        <td> <b> Selección </b></td>
+                        <td> <b> <img src="~/css/Gol.png" width="40" /> </b></td>
+                        <td> <img src="~/css/TarjetaAmarilla.png" width="40" /> </td>
+                        <td>  <img src="~/css/TarjetaRoja.png" width="40" /></td>
+                        <td> <b> Selección </b></td>
+                        <td> <b> <img src="~/css/Gol.png" width="40" /> </b></td>
+                        <td> <img src="~/css/TarjetaAmarilla.png" width="40" /> </td>
+                        <td>  <img src="~/css/TarjetaRoja.png" width="40" /></td>
+                        <td><b></b></td>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var partido in Model)
+                    {
+
+                        <tr>
+                            <td class="col-1 col-sm-1">@partido.FechaPartido.ToString("dd/MM/yyyy hh:mm tt")</td>
+                            <td>@partido.GetSeleccionesPartido()[0].Pais.NombrePais</td>
+                            <td class="col-1 col-sm-1">@partido.GetIncidenciasTipo("Gol", 0)</td>
+                            <td class="col-1 col-sm-1">@partido.GetIncidenciasTipo("TarjetaAmarilla", 0)</td>
+                            <td class="col-1 col-sm-1">@partido.GetIncidenciasTipo("TarjetaRoja", 0)</td>
+                            <td> @partido.GetSeleccionesPartido()[1].Pais.NombrePais</td>
+                            <td class="col-1 col-sm-1">@partido.GetIncidenciasTipo("Gol", 1)</td>
+                            <td class="col-1 col-sm-1">@partido.GetIncidenciasTipo("TarjetaAmarilla", 1)</td>
+                            <td class="col-1 col-sm-1">@partido.GetIncidenciasTipo("TarjetaRoja", 1)</td>
+                            <td>@partido.ResultadoFinal</td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        }
+    }
+</div>
+
+<script src="~/js/Operador/Estadisticas.js"></script>
