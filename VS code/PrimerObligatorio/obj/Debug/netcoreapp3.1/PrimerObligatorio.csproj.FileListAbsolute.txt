@@ -1,0 +1,14 @@
+D:\Estudio\ORT\2S\P2\Obligatorio\PrimerObligatorio\PrimerObligatorio\obj\Debug\netcoreapp3.1\PrimerObligatorio.csproj.AssemblyReference.cache
+D:\Estudio\ORT\2S\P2\Obligatorio\PrimerObligatorio\PrimerObligatorio\obj\Debug\netcoreapp3.1\PrimerObligatorio.GeneratedMSBuildEditorConfig.editorconfig
+D:\Estudio\ORT\2S\P2\Obligatorio\PrimerObligatorio\PrimerObligatorio\obj\Debug\netcoreapp3.1\PrimerObligatorio.AssemblyInfoInputs.cache
+D:\Estudio\ORT\2S\P2\Obligatorio\PrimerObligatorio\PrimerObligatorio\obj\Debug\netcoreapp3.1\PrimerObligatorio.AssemblyInfo.cs
+D:\Estudio\ORT\2S\P2\Obligatorio\PrimerObligatorio\PrimerObligatorio\obj\Debug\netcoreapp3.1\PrimerObligatorio.csproj.CoreCompileInputs.cache
+D:\Estudio\ORT\2S\P2\Obligatorio\PrimerObligatorio\PrimerObligatorio\bin\Debug\netcoreapp3.1\PrimerObligatorio.exe
+D:\Estudio\ORT\2S\P2\Obligatorio\PrimerObligatorio\PrimerObligatorio\bin\Debug\netcoreapp3.1\PrimerObligatorio.deps.json
+D:\Estudio\ORT\2S\P2\Obligatorio\PrimerObligatorio\PrimerObligatorio\bin\Debug\netcoreapp3.1\PrimerObligatorio.runtimeconfig.json
+D:\Estudio\ORT\2S\P2\Obligatorio\PrimerObligatorio\PrimerObligatorio\bin\Debug\netcoreapp3.1\PrimerObligatorio.runtimeconfig.dev.json
+D:\Estudio\ORT\2S\P2\Obligatorio\PrimerObligatorio\PrimerObligatorio\bin\Debug\netcoreapp3.1\PrimerObligatorio.dll
+D:\Estudio\ORT\2S\P2\Obligatorio\PrimerObligatorio\PrimerObligatorio\bin\Debug\netcoreapp3.1\PrimerObligatorio.pdb
+D:\Estudio\ORT\2S\P2\Obligatorio\PrimerObligatorio\PrimerObligatorio\obj\Debug\netcoreapp3.1\PrimerObligatorio.dll
+D:\Estudio\ORT\2S\P2\Obligatorio\PrimerObligatorio\PrimerObligatorio\obj\Debug\netcoreapp3.1\PrimerObligatorio.pdb
+D:\Estudio\ORT\2S\P2\Obligatorio\PrimerObligatorio\PrimerObligatorio\obj\Debug\netcoreapp3.1\PrimerObligatorio.genruntimeconfig.cache

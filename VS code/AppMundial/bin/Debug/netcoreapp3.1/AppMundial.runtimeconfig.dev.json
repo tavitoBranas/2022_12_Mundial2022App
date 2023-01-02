@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Techdinamics\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Techdinamics\\.nuget\\packages"
+    ]
+  }
+}
