@@ -1,5 +1,7 @@
 # Aplicacion para Gestion del mundial 2022
 
+Segunda aplicacion creada.
+
 Esta aplicacion se desarrolló en .NET empleando el patron MVC y permite la gestion de los partidos del mundial de Qatar.
 Dicha aplicación se deployo en Somee.
 
@@ -7,20 +9,21 @@ La aplicacion cuenta con una clase Sistema comom singleton que permite administr
 
 La aplicacion almacena informacion de partidos realizados. 
 Existen dos usuarios:
-  Operadores: 
-    - generan los partidos 
-    - cargan las incidencias
-    - finalizan el partido: el resultado (ganador o empate) se define automaticamente por el sistema
-    - listar todos los partidos de un jugador con su estadistica
-    - listar jugadores expulsados de manera ordernada
-    - dado una seleccion, obtener el partido con mayor cantidad de goles
-    - listar jugadores que hayan convertido al menos un gol
-    - visulizar los partidos jugados entre dos fechas
-  Periodistas: 
-    - se registran
-    - realizan reseñas de partidos finalizados
-    - desplegar todas las reseñas realizadas por el
-    - pueden desloguearse
+Operadores: 
+- generan los partidos 
+- cargan las incidencias
+- finalizan el partido: el resultado (ganador o empate) se define automaticamente por el sistema
+- listar todos los partidos de un jugador con su estadistica
+- listar jugadores expulsados de manera ordernada
+- dado una seleccion, obtener el partido con mayor cantidad de goles
+- listar jugadores que hayan convertido al menos un gol
+- visulizar los partidos jugados entre dos fechas
+  
+Periodistas: 
+- se registran
+- realizan reseñas de partidos finalizados
+- desplegar todas las reseñas realizadas por el
+- pueden desloguearse
 
 -----------------------------------------------------------------------------------------------------------------------------
 
